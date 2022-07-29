@@ -1,0 +1,48 @@
+---
+title: "lecture 3 presentation"
+author: "Simon"
+date: "29/7/2022"
+output:
+  beamer_presentation: 
+    toc: true
+    slide_level: 2 
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+    
+---
+
+
+# Geometric series
+
+
+## Geometriske serier review - Eksempler på serier
+
+### Eksempel 1:
+
+$$\sum^n_{n=1} x^n=x + x^2 + x^3 + x^4 +...+x^{n-1}$$
+
+
+### Eksempel 2:
+
+$$x + \sqrt{x} + 1 + \frac{1}{\sqrt{x}} + \frac{1}{x} ... $$
+
+## Typer af geometriske serier
+
+### Endelig serie
+
+$\sum^n_{n=1} ak^n = a* \frac{1-k^n}{1-k}$,   $k \neq1$
+
+### Uendelig serie
+
+$\sum^n_{n=1} ak^n = \frac{a}{1-k}$,   $\lvert k \rvert  <1$
+
+
+$\sum^n_{n=1} ak^n = na$,   $\lvert k \rvert  =1$
+
+
+
+# Stationaritet 
+
+
+

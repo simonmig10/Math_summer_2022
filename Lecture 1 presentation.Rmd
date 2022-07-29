@@ -1,0 +1,8 @@
+---
+title: "Lecture 1 presentation"
+author: "Simon"
+date: "29/7/2022"
+output: html_document
+---
+
+

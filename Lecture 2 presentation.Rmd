@@ -1,0 +1,15 @@
+---
+title: "lecture 3 presentation"
+author: "Simon"
+date: "29/7/2022"
+output:
+  beamer_presentation: 
+    toc: true
+    slide_level: 2 
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+    
+---
+
+

@@ -1,0 +1,58 @@
+---
+title: "Lecture 3 geometric series"
+author: "Simon"
+date: "29/7/2022"
+output: html_document
+---
+
+Stationary AR(1) process
+
+```{r}
+library(forecast)
+# Set up variables
+set.seed(1234)
+n <- 1000
+x <- matrix(0,1000,1)
+w <- rnorm(n)
+
+# loop to create x
+for (t in 2:n) x[t] <- 5+ 0.5 * x[t-1] + w[t]
+plot(x,type='l', main = "X_t= 5 + 0.5*X_t-1 + u_t")
+
+```
+
+```{r}
+
+# Set up variables
+set.seed(1234)
+n <- 1000
+x <- matrix(0,1000,1)
+w <- rnorm(n)
+
+# loop to create x
+for (t in 2:n) x[t] <- 5+ 1.5 * x[t-1] + w[t]
+plot(x,type='l', main = "X_t= 5 + 1.5*X_t-1 + u_t")
+
+```
+
+```{r}
+# Set up variables
+set.seed(1234)
+n <- 1000
+x <- matrix(0,1000,1)
+w <- rnorm(n)
+
+# loop to create x
+for (t in 2:n) x[t] <- 5+ 1 * x[t-1] + w[t]
+plot(x,type='l', main = "X_t= 5 + 1*X_t-1 + u_t")
+```
+ 
+```{r}
+y=arima.sim(model = list(ar=c(0.6,-0.3)), n=1000)+10
+
+plot(y)
+
+dynlm(y~ L(y,1))
+```
+ 
+
