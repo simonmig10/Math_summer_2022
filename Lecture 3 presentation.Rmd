@@ -42,6 +42,79 @@ $\sum^n_{n=1} ak^n = na$,   $\lvert k \rvert  =1$
 
 
 
+## Udregning
+
+### Endelig serie
+
+$$S_n = \alpha + \alpha*k + \alpha*k^2 + \alpha*k^3 + ... + \alpha*k^{n-1}$$
+$$k*S_n = \alpha*k + \alpha*k^2 + \alpha*k^3 + \alpha*k^4 + ... + \alpha*k^{n}$$
+
+$$S_n - k*S_n = \alpha + (\alpha*k - \alpha*k) + (\alpha*k^2- \alpha*k^2) + ... + (\alpha*k^{n-1} - \alpha*k^{n-1}) - \alpha*k^{n}$$
+
+$$S_n - k*S_n = \alpha - \alpha*k^{n}$$
+
+$$S_n(1-k) = \alpha(1-k^n)$$
+
+$$S_n = \alpha * \frac{1-k^n}{1-k}$$
+
+## Eksempel på brug af geometriske serier (difference ligning)
+
+### Mean af AR(1) process
+
+
+## Eksempel på brug af geometriske serier (difference ligning)
+
+### Simulering
+
+```{r, echo=FALSE, fig.height= 5}
+suppressPackageStartupMessages(library(forecast))
+# Set up variables
+set.seed(1234)
+n <- 1000
+x <- matrix(0,1000,1)
+w <- rnorm(n)
+
+# loop to create x
+for (t in 2:n) x[t] <- 5+ 0.5 * x[t-1] + w[t]
+plot(x,type='l', main = "X_t= 5 + 0.5*X_t-1 + u_t"); abline( h=10, col= "red")
+```
+
+## Eksempel på brug af geometriske serier (difference ligning)
+
+### Simulering
+
+```{r, echo=FALSE, fig.height= 5}
+
+# Set up variables
+set.seed(1234)
+n <- 1000
+x <- matrix(0,1000,1)
+w <- rnorm(n)
+
+# loop to create x
+for (t in 2:n) x[t] <- 5+ 1.5 * x[t-1] + w[t]
+plot(x,type='l', main = "X_t= 5 + 1.5*X_t-1 + u_t")
+
+```
+
+
+## Eksempel på brug af geometriske serier (difference ligning)
+
+### Simulering
+
+```{r, echo=FALSE, fig.height= 5}
+# Set up variables
+set.seed(1234)
+n <- 1000
+x <- matrix(0,1000,1)
+w <- rnorm(n)
+
+# loop to create x
+for (t in 2:n) x[t] <- 5+ 1 * x[t-1] + w[t]
+plot(x,type='l', main = "X_t= 5 + 1*X_t-1 + u_t")
+```
+
+
 # Stationaritet 
 
 
