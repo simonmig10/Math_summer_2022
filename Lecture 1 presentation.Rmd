@@ -1,8 +1,113 @@
 ---
-title: "Lecture 1 presentation"
+title: "lecture 1 presentation"
 author: "Simon"
 date: "29/7/2022"
-output: html_document
+output:
+  beamer_presentation:
+    toc: yes
+    slide_level: 2
+    theme: AnnArbor
+    colortheme: dolphin
+    fonttheme: structurebold
 ---
 
+# Intro til kursus: 
 
+
+
+# Differentierings regler (funktioner af en variable)
+
+For differentiable funktioner $f(x)$, $g(x)$. $h(x)$ og konstanten $a$ gælder: 
+
+$$f(x)=a,  \rightarrow f'(x) = 0$$
+$$f(x)=ag(x)  \rightarrow f'(x) = ag'(x)$$
+$$f(x)=g(x) + h(x)  \rightarrow f'(x) = g'(x) + h'(x)$$
+$$f(x)=g(x)  h(x)  \rightarrow f'(x) = g'(x)h(x) + g(x)h'(x)$$
+$$f(x)= \frac{g(x)}{h(x)}  \rightarrow f'(x) = \frac{g'(x)h(x) - g(x)h(x)} {(h(x))^2}$$
+$$f(x)=x^a  \rightarrow f'(x) = ax^{a-1}$$
+$$f(x)=g(x)^a  \rightarrow f'(x) = ag(x)^{a-1}g'(x)$$
+$$f(x)=e^x  \rightarrow f'(x) = e^x$$
+$$f(x)=ln(x)  \rightarrow f'(x) = \frac{1}{x}$$
+
+
+## Kædereglen - Sammensatte funktioner
+
+- Lad $z= f(x,y)$
+- Lad $y$ og $x$ være funktioner af t: $y= g(t)$ og $x= h(t)$
+- Her er $z$ en sammensat funktion af $t$: $z= f(g(t),h(t))$
+
+- Brug **kædereglen**:
+
+$$\frac{dz}{dt} = \frac{\delta z}{\delta x} * \frac{\delta x}{\delta t} + \frac{\delta z}{\delta y} * \frac{\delta y}{\delta t}$$
+
+
+
+
+## Kædereglen Eksempel
+
+Antag funktionen: $F(x.y) = ln(x) + y^2$, hvor $x= e^{10t}$ og $y= \sqrt{50t}$
+
+- Step 1: Find $F_x'(x,y)$ og $F_y'(x,y)$
+
+$$F_x'(x,y) = \frac{1}{x}$$
+$$F_y'(x,y) = 2y$$
+
+- Step 2: Find $x_t'$ og $y_t'$
+
+$$x_t' = 10e^{10t}$$
+$$y_t' = \frac {50}{2\sqrt{50t}}$$ (Brug kæderegl for 1 variable)
+
+## Kædereglen Eksempel
+
+- Step 3: Brug nu funktionen for kædereglen
+
+$$F_t'(x,y)=\frac{1}{x}10^{10t} + 2y \frac{50}{2\sqrt{50t}}$$
+$$F_t'(x,y)=\frac{1}{x}10^{10t} + y\frac{50}{\sqrt{50t}}$$
+
+# Differensiering med sidebetingler (Langrange)
+
+## Simpelt eksempel
+
+Funktion $f(x,y)=x+y$ med betingelsen  $g(x,y)= x^2 +y =1$
+
+Vi ønsker at optimere (find max) af f(x,y) givet side betingelsen derfor opstil Langrange:
+
+$$L= x+y - \lambda(x^2 + y -1)$$
+Find afledte:
+
+$$L'_x = 1- 2x\lambda$$
+$$L'_y = 1 - \lambda$$
+$$L'_\lambda = -x^2 - y + 1$$
+
+Vi kan nu sætte disse ligmed 0 og løse for de tre ubekendte. 
+
+Vi opnår følgende løsning: $x = 1/2$, $y= 3/4$ og $\lambda = 1$.
+
+## Optimeringm af nytte funktion med budgetrestriktion (OLG model) 
+
+Antag budget restriktionen:  $C_{1,t} + \frac{1}{(1+r_{t+1})} * C_{2,t+1}= W_t*A_t$
+
+Samt nytte funktionen: $U_t = U(C_{1,t}) + \beta U(C_{2.t+1})$
+
+- Hvor $\beta = 1/(1+\rho)$
+
+Antag at: $U(C_{j,t})= ln(C_{j,t})$
+
+Dermed opstil Langrange: 
+
+$$L= ln(C_{1,t} + \frac{1}{1+\rho}*ln(C_{2,t+1}) - \lambda((C_{1,t} + \frac{1}{1+\rho}*C_{2,t+1}) - W_t*A_t) $$
+
+
+## Optimeringm af nytte funktion med budgetrestriktion (OLG model)
+
+Find afledte, og sæt ligmed 0: 
+
+$$L'_{C_{1,t}} = 1/C_{1,t} - \lambda=0$$
+$$L'_{C_{2,t+1}} = \frac{1}{1+\rho} * \frac{1}{C_{2,t+1}} - \frac{\lambda}{1+r_{t+1}}=0$$
+
+Vi kan isolere $\lambda = 1/C_{1,t}$ og indsætte i $L'_{C_{2,t+1}}$
+
+Vi kan nu reducere til vi har: 
+
+$$\frac{C_{1,t}}{C_{2,t+1}} = \frac{1+\rho}{1+r_{t+1}}$$
+(også kaldt Euler equation)

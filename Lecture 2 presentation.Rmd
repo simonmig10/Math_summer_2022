@@ -1,6 +1,6 @@
 ---
-title: "lecture 3 presentation"
-author: "Simon"
+title: "lecture 2 presentation"
+author: "Simon Fløj Thomsen"
 date: "29/7/2022"
 output:
   beamer_presentation: 
@@ -12,4 +12,270 @@ output:
     
 ---
 
+# Fase diagrammer
+
+## Ramsey model ligninger
+
+
+
+### Lignigner
+
+$$\frac{\dot{c}}{c}= \frac{f'(k) - \rho -\theta g}{\theta}$$
+$$\dot{k} = f(k) - c -(n + g) k$$
+
+### Kort forklaring af variable 
+
+- $f'(k)$ interest on capital 
+
+- $\rho$ Discount raten (hvor meget værdi de sætter på forbrug nu relativt til forbrug i fremtiden)
+
+- $\theta$ "risk" parameter, hvis lille er husholdningerne "okay" med at lade deres forbrug svinge mere periode fra periode
+
+- $g$ vækstraten i teknologi 
+
+- $n$ vækstraten i arbejdskraft
+
+## Dynamics of c
+
+$$\frac{\dot{c}}{c}= \frac{f'(k) - \rho -\theta g}{\theta}$$
+$$ f'(k) - \rho -\theta g=0$$
+$$ \rho -\theta g=f'(k)$$
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("c dot.png", 1), dpi = 250)
+```
+
+
+## Dynamics of k
+
+$$\dot{k} = f(k) - c -(n + g) k$$
+$$f(k) - c -(n + g) k=0$$
+$$c = f(k) -(n + g)k$$
+```{r, echo=FALSE}
+knitr::include_graphics(rep("k dot.png", 1), dpi = 250)
+```
+
+
+## Combined
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("k dot c dot.jpg", 1), dpi = 500)
+```
+
+## Combined
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f.jpg", 1), dpi = 600)
+```
+
+- k(0) eksogent bestemt
+
+- Requirements: 
+
+1. households satisfy their budget constraint (eleminates all under F)
+2. Økonomiens kapital beholdning kan ikke være negativ (eleminates all above F)
+
+
+
+# Taylor approximation
+
+## Generalt 
+
+Før så vi saddelpath i mod ligevægten: 
+
+Men! Hvor hurtigt tilpasser vi os til $(c^*,k^*)$ ved afvigelser?
+
+### Maclaurin polynomials
+
+ Approximation af $f(x)$ når $x=0$
+ 
+$$p(x) = \sum^{\infty}_{n=0} = \frac{ f^{(n)}(0)}{n!} (x)^n$$
+
+### Taylor polynomials
+
+Approximation af $f(x)$ når $x=c$
+
+$$p(x) = \sum^{\infty}_{n=0} = \frac{ f^{(n)}(0)}{n!} (x-c)^n$$
+
+## Maclaurin polynomials 
+
+- Maclaurin approximation af $f(x)$ når $x=0$. 
+
+$$p(x)= f(0) + f'(0)x + f''(0)*\frac{1}{2!}x^2 + f'''(0)*\frac{1}{3!}x^3 + ... + f^n(0)*\frac{1}{n!}x^n$$
+
+- Udledning 
+
+## Maclaurin polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f(x).png", 1), dpi = 200)
+```
+
+## Maclaurin polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f(0).png", 1), dpi = 250)
+```
+
+
+## Maclaurin polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f'(0).png", 1), dpi = 250)
+```
+
+
+## Maclaurin polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f''(0).png", 1), dpi = 250)
+```
+
+
+## Taylor polynomials
+
+- Taylor approximation of f(x) when x=c
+
+$$
+\begin{aligned}
+p(x)= f(0) + f'(0)(x-c) + f''(0)*\frac{1}{2!}(x-c)^2\\ + f'''(0)*\frac{1}{3!}(x-c)^3 + ... + f^n(0)*\frac{1}{n!}(x-c)^n
+\end{aligned}
+$$
+
+- Udledning
+
+## Taylor polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f(x)c.png", 1), dpi = 250)
+```
+
+
+## Taylor polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f(c).png", 1), dpi = 250)
+```
+
+
+## Taylor polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f'(c).png", 1), dpi = 250)
+```
+
+
+## Taylor polynomials (udledning)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("f''(c).png", 1), dpi = 250)
+```
+
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+Som nævnt tidligere ønsker vi at finde ud af hvor hurtigt vi tilpasser os $k^*$ ved små afvigelser (find hældningen af saddelpath omkring $k^*$)
+
+Hvordan? Find 1. order Taylor approximation omkring $k=k^*$ og $c=c^*$ givet:
+
+$$\frac{\dot{c}}{c}= \frac{f'(k) - \rho -\theta g}{\theta}$$
+
+$$\dot{k} = f(k) - c -(n+g)k$$
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+Først opstiller vi de to taylor approximations: 
+
+$$\dot{c} \approx \frac{d\dot{c}}{dk}[k-k^*] + \frac{d\dot{c}}{dc} [c - c^*]$$
+$$\dot{k} \approx \frac{d\dot{k}}{dk}[k-k^*] + \frac{d\dot{k}}{dc} [c - c^*]$$
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+Vi omskriver nu afvigelserne: $\tilde{c}=c-c^*$ og $\tilde{k} = k - k^*$
+**Da $c^*$ og $k^*$ er konstante kan vi også skrive $\dot{\tilde{c}}= \dot{c}$ og $\dot{\tilde{k}}= \dot{k}$**
+
+Dermed: 
+
+$$\dot{\tilde{c}} \approx \frac{d\dot{c}}{dk}\tilde{k} + \frac{d\dot{c}}{dc} \tilde{c}$$
+$$\dot{\tilde{k}} \approx \frac{d\dot{k}}{dk}\tilde{k} + \frac{d\dot{k}}{dc} \tilde{c}$$
+
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+Vi kan nu finde de afledte!
+
+- For $\dot{\tilde{c}}$
+
+$$\frac{d\dot{c}}{dk} = \frac{f''(k^*)  c^*}{\theta}$$
+$$\frac{d\dot{c}}{dc} = 0$$
+$$\dot{\tilde{c}} = \frac{f''(k^*)  c^*}{\theta} \tilde{k} $$
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+- For $\dot{\tilde{k}}$
+$$\frac{d\dot{k}}{dk} = f'(k) - (n+g)$$
+$$\frac{d\dot{k}}{dc} = -1$$
+$$\dot{\tilde{k}} = [f'(k) - (n+g)]\tilde{k} - \tilde{c}$$
+- ud fra ${\dot{c}}/c=0$ kan vi udlede at $f'(k)= (\rho + \theta g)$
+$$\dot{\tilde{k}} = [(\rho + \theta g) - (n+g)]\tilde{k} - \tilde{c}$$
+
+- da $[(\rho + \theta g) - (n+g)]$ blot er parametre kan vi sætte det ligmed en konstant $\beta$
+
+$$\dot{\tilde{k}} = \beta\tilde{k} - \tilde{c}$$
+
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+- For at få vækstraterne dividerer vi med $\tilde{c}$ i $\dot{\tilde{c}}$ og $\tilde{k}$ i $\dot{\tilde{k}}$
+
+$$\frac{\dot{\tilde{c}}}{\tilde{c}} = \frac{f''(k^*)  c^*}{\theta} \frac{\tilde{k}}{\tilde{c}}$$
+$$\frac{\dot{\tilde{k}}}{\tilde{k}} = \beta - \frac{\tilde{c}}{\tilde{k}}$$
+Vi kan se det der bestemmer growthrates i $\tilde{c}$ og $\tilde{k}$ er ratioen mellem de to!
+
+Derfor hvis vækst raten er ens i de to ($\frac{\dot{\tilde{c}}}{\tilde{c}} = \frac{\dot{\tilde{k}}}{\tilde{k}}$) vil rationen ikke ændres og der vil være  en konstant vækstrate for både $\tilde{c}$ og $\tilde{k}$
+
+
+- For at gøre det nemmere sætter vi nu $\mu= \frac{\dot{\tilde{c}}}{\tilde{c}}$
+
+og kan omskrive $\frac{\dot{\tilde{c}}}{\tilde{c}} = \frac{f''(k^*)  c^*}{\theta} \frac{\tilde{k}}{\tilde{c}}$ til:
+
+$$\frac{\tilde{c}}{\tilde{k}} = \frac{f''(k^*)  c^*}{\theta} \frac{1}{\mu}$$
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+
+- Ovenfor fandt vi at $\frac{\dot{\tilde{c}}}{\tilde{c}} = \frac{\dot{\tilde{k}}}{\tilde{k}}$ defor kan vi nu skrive:
+
+$$\mu = \beta - \frac{\tilde{c}}{\tilde{k}}$$
+- Og kan nu indsætte udtrykket for $\frac{\tilde{c}}{\tilde{k}}$
+
+$$\mu = \beta - \frac{f''(k^*)  c^*}{\theta} \frac{1}{\mu}$$
+- Vi kan nu flytte det hele på venstresiden for at sætte ligmed 0:
+
+
+$$\mu^2 - \beta \mu +\frac{f''(k^*)  c^*}{\theta}  = 0$$
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+- Vi kan bruge nulpunktsformlen: 
+
+$$\mu = \frac{\beta \pm [\beta^2 - 4(f''(k^*) c^*/\theta]^{1/2}}{2}$$
+
+MEN! Husk at $\tilde{c}$ og $\tilde{k}$ er afstanden fra deres steady states levels! Derfor hvis $\mu > 0$ vil afstanen vokse hver periode!
+Hvis tilgengæld $\mu < 0$ vil vi gå mod en ligevægt i $(c^*,k^*)$
+
+- Vi ved $f''(k^*)$ er negativ (Da marginal produktet af kapital er aftagende)
+
+Derfor benytter vi følgende nulpunkt:
+
+$$\mu = \frac{\beta - [\beta^2 - 4(f''(k^*) c^*/\theta]^{1/2}}{2}$$
+
+## Taylor approximation Solow model (Eksempel fra bogen)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("lin path.jpg", 1), dpi = 600)
+```
+
+
+# Opgaver
 

@@ -57,16 +57,145 @@ $$S_n(1-k) = \alpha(1-k^n)$$
 
 $$S_n = \alpha * \frac{1-k^n}{1-k}$$
 
-## Eksempel på brug af geometriske serier (difference ligning)
+## Udregning
 
-### Mean af AR(1) process
+### Uendelig serie
+
+Hvis $\vert k \vert <  1$ når $n \to \infty$ vil udtrykket gå mod:
+
+$$S_n = \alpha * \frac{1}{1-k}$$
+
+Dermed kan vi skrive:
+
+$$ \sum_{n=1}^\infty = \frac{ \alpha}{1-k}$$
+
+# Difference equations
 
 
-## Eksempel på brug af geometriske serier (difference ligning)
+## Math to econometrics
+
+Today we will look at 1. order difference equations
+
+In 2. semester math seen like this: 
+
+$$x_t = ax_{t-1} + b$$
+In time series econometrics you will see it like this, called an AR(1) process: 
+
+$$y_t= \mu + \theta y_{t-1} + \varepsilon_t$$
+We will look at what differences between these two equations
+
+Lets first see what they got in common:
+
+- Both equations got a constant $\mu$ and $b$
+
+- Both equations got a coefficient $\theta$ and $a$
+
+- Both equations got a variable that changes over time (discrete) $y_t$ and $x_t$
+
+
+## Math to econometrics
+
+The difference between the two equations is that in econometrics we got the error term $\varepsilon_t$ with the diffenition:
+
+$$\varepsilon_t \sim IID(0,\sigma^2)$$
+Explain! 
+
+Later we take a look at how this changes things!
+
+
+## Differens equations (Math)
+
+Lets look at the difference equation again:
+
+$$x_t = ax_{t-1} + b_t$$
+We can start from a given point $x_0$ 
+
+$$x_1 = ax_0 + b_1$$
+$$x_2 = ax_1 + b_2 = a(ax_0 + b_1) + b_2 = a^2 x_0 + ab_1 + b_2$$
+$$x_3 = ax_2 + b_3 = a(a^2x_0 + ab_1 + b_2) + b_3 = a^3x_0 + a^2 b_1 + ab_2 + b_3$$
+
+## Differens equations (Math)
+
+We can already see the pattern:
+
+$$x_t= a^t x_0 + \sum^t_{k=1} a^{t-k} b_k$$
+
+We now assume the case when $b_k = b$ so we now got a constant as in the AR(1) model.
+
+So we can now write the last term as:
+
+$$\sum^t_{k=1}a^{t-k}b$$ 
+Which is a geometric series! that we just covered!
+
+$$\sum^t_{k=1}a^{t-k}b= b(a^{t-1} + a^{t-2} + a^{t-3} +...+a +1) =\frac{(b-ba^t)}{(1-a)}$$
+
+## Differens equations (Math)
+
+Therefor we can now write: 
+
+$$x_t= a^t (x_0 - \frac{b}{1-a}) + \frac{b}{1-a}$$
+
+We can see that if $x_0 = \frac{b}{1-a}$ we get that $x_t= \frac{b}{1-a}$ which I have illustrated down below:
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("diff..png", 1), dpi = 300)
+```
+
+
+## Differens equations (Math)
+
+In fact if just $x_s$ at any point hits $\frac{b}{1-a}$ we wont get away from it as:
+
+$$x_{s+1} = a\frac{b}{1-a} +b = \frac{b}{1-a}$$
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("diff2.png", 1), dpi = 300)
+```
+
+But what if we never hit that value?
+
+## Difference equations (stability)
+
+### Case 1
+
+$$\vert a \vert < 1$$
+We then see that $a^t$ goes towards 0 as $t \to \infty$ in: 
+
+$$x_t= a^t (x_0 - \frac{b}{1-a}) + \frac{b}{1-a}$$
+And we will end up with 
+
+$$x_t= \frac{b}{1-a}$$
+
+### Case 2
+
+$$\vert a \vert > 1$$
+
+We then see that $a^t$ goes towards $\infty$ as $t \to \infty$ in and will explode. 
+
+
+**But what if x_0 start below and we hit the value it should just stop right? Eller er det umuligt vil den eksplodere ned af i stedet?**
+
+## Difference equations (stability)
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("diff3.png", 1), dpi = 150)
+```
+
+## AR(1) model Econometrics
+
+Lets look at the AR(1) process again:
+
+$$y_t= \mu + \theta y_{t-1} + \varepsilon_t$$
+Where the only difference was the error term: $\varepsilon_t$ lets see some examples and what the difference is
+
+
+## AR(1) model Exonometrics
+
+To give an example we use the model:
+$$y_t= 5 +  0.5y_{t-1}+\varepsilon_t$$
 
 ### Simulering
-
-```{r, echo=FALSE, fig.height= 5}
+```{r, echo=FALSE, fig.height= 3.5}
 suppressPackageStartupMessages(library(forecast))
 # Set up variables
 set.seed(1234)
@@ -79,7 +208,11 @@ for (t in 2:n) x[t] <- 5+ 0.5 * x[t-1] + w[t]
 plot(x,type='l', main = "X_t= 5 + 0.5*X_t-1 + u_t"); abline( h=10, col= "red")
 ```
 
-## Eksempel på brug af geometriske serier (difference ligning)
+We see the shocks from $\varepsilon_t$ does so we never stay in $\frac{b}{1-a}$ as we did with the difference equations before
+
+## AR(1) model Exonometrics
+
+$$y_t= 5 +  1.5y_{t-1}+\varepsilon_t$$
 
 ### Simulering
 
@@ -98,7 +231,9 @@ plot(x,type='l', main = "X_t= 5 + 1.5*X_t-1 + u_t")
 ```
 
 
-## Eksempel på brug af geometriske serier (difference ligning)
+## AR(1) model Exonometrics
+
+$$y_t= 5 +  1y_{t-1}+\varepsilon_t$$
 
 ### Simulering
 
@@ -115,7 +250,39 @@ plot(x,type='l', main = "X_t= 5 + 1*X_t-1 + u_t")
 ```
 
 
-# Stationaritet 
+## AR(1) model Exonometrics (mean)
 
+We saw before that we never stay the value $\frac{b}{1-a}$ in the AR(1) model, but what if we calculate the mean?
+
+$$E[y_t] = E[\mu + \theta y_{t-1} + \varepsilon_t]$$
+$$= \mu + \theta E[y_{t-1}] + E[\varepsilon]$$
+$$= \mu + \theta E[\mu + \theta y_{t-2} + \varepsilon_{t-1}]$$
+$$= \mu + \mu\theta+  \theta^2 E[y_{t-2}]$$
+$$= \mu + \mu\theta+  \theta^2 E[\mu + \theta y_{t-3} + \varepsilon_{t-2}]$$
+$$= \mu(1 + \theta + \theta^2 + \theta^3 + ... +\theta^\infty)$$
+
+
+So back to the geometric series if $\vert \theta \vert< 1$ we get $\frac{\mu}{1-\theta}$
+
+
+## AR(1) model Exonometrics (mean)
+
+Lets try calculating the mean using the example from before before 
+
+$$y_t= 5 +  0.5y_{t-1}+\varepsilon_t$$
+$$E[y_t]= \frac{5}{1-0.5} = 10$$
+
+Lets look at the plot again!
+
+# Stationaritet
+
+
+## Slide
+
+Not sure how much I should focus on like the criterias here?
+
+Im thinking of letting the calculate the mean of a randopm walk with drift and see that the mean dependt on time?
+
+And maybe also for a AR(1) process with a trend term!
 
 
