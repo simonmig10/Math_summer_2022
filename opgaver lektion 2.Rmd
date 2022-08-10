@@ -1,0 +1,87 @@
+---
+title: "Opgaver lektion 2"
+author: "Simon"
+date: "4/8/2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Opgaver til fase diagrammer?
+
+
+
+
+# Opgave 1
+
+Find Taylor approximation af:
+
+- (a.) $f(x) = 4x^3 + 2x^2 -3x +2$ når $x=0$ 
+
+- (b.) $f(x) = e^{3x}$ når $x=0$
+
+- (b.) $f(x) = \sqrt{1+x}$ når $x=0$
+
+- (b.) $f(x) = \sqrt[3]{x}$ når $x=1$
+
+- (b.) $F(K) = AK^\alpha$ når $K=1$
+
+- (b.) $f(x) = 5(ln(1-x)- \sqrt{1-x})$ når $x=0$
+
+
+# Opgave 2
+
+Givet funktionen $f(x)=x^6 - x^3$ hvad er koefficienten for ledet $(x+2)^4$ i Taylor approximation af f(x) omkring $x=-2$
+
+# Opgave 3 ( Ved ik helt om jeg skal vise denne i slides, og inkludere den anden i opgaver?)
+
+
+
+Find en 1. order Taylor approximation omkring $k=k^*$ når du ved at udviklingen i kapital over tid følger følgende ligning: 
+
+
+$$\dot{k} = s*f(k) - (n+g+\delta)k$$
+
+## Løsning opgave 3
+
+$$\dot{k} = s*f(k) - (n+g+\delta)k$$
+
+$$\dot{k}(k)$$
+
+- Vi ønsker at lave en første ordens taylor approximation omkring $k=k^*$
+
+- Så hvor vi før havde $c$ har vi nu $k^*$
+
+$$\dot{k} \approx \frac{\delta \dot{k}(k)}{\delta k}|_{k=k^*} (k-k^*)$$
+
+Antag:
+
+$$\lambda = -(\frac{\delta \dot{k}(k)}{\delta k})$$
+Dermed:
+
+$$\dot{k} \approx - \lambda|_{k=k^*} (k-k^*)$$
+
+Hvis $k>k^*$ ved vi at $\dot{k} < 0$.
+Omvendt hvis $k<k^*$ ved vi at $\dot{k} > 0$.
+Dermed ved vi at hældning $(\frac{\delta \dot{k}(k)}{\delta k})$ er negativ
+
+$$\dot{k} \approx  \lambda|_{k=k^*} (k-k^*)$$
+
+Vi vil nu finde $\lambda= - (\frac{\delta \dot{k}(k)}{\delta k})$:
+
+$$-(\dot{k} \approx  \lambda|_{k=k^*}) = -[s* f'(k^*) - (n + g + \delta)]$$
+
+$$= (n+g+\delta) - s*f(k)$$
+
+For at opnå et steady state niveau. ønsker vi at $\dot{k}=0$ Derfor $S= (n+g+\delta)k^*$
+
+$$= (n+g+\delta) - \frac{(n+g+\delta)* k^* * f'(k^*)}{f(k^*)}$$
+
+Vi ved $s=S/f(k^*)$
+
+Derudover ved vi at kapital andelen kan skrives som følgende $\alpha_k= \frac{k^* (f'(k))}{f(k^*)}$ 
+
+$$\lambda = [1-\alpha_k] (n+ g+ \delta)$$
+
+
+

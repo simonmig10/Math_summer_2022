@@ -1,0 +1,42 @@
+---
+title: "Opgaver lektion 1"
+author: "Simon"
+date: "4/8/2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+
+# Opgave 1:
+
+Måske opgave 5 side 197 
+
+# Opgave 2:
+
+Lad kapital per effektiv arbejder være bestemt af funktionen $k=\frac{K}{AL}$ hvor udviklingen i kapital over tid er givet ved $\dot{K} = [Y(t) - C(t)] - \delta K(t)$ Labor in time t $L(t)= L(0) e^{nt}$ and technology in time t: $A(t)= A(0) e^{gt}$
+
+find udviklingen i $k$ over tid $(\dot{k})$
+
+- Hint opstil vækstraten $\dot{A}/A$ og $\dot{L}/L$
+
+# Opgave 1
+
+Antag funktionen for constant relative risk aversion (CRRA): $f(L_t) = \frac{b(1-L_t)^{1-\gamma}}{1- \gamma}$
+
+Hvor $b$ er....
+
+Find $f'(L_t)$ med respekt til $L_t$
+
+# Opgave 2
+
+- (a.) Find følgende Euler equation $\frac{C_{2,t+1}}{C_{1,t}} = [\frac{1+ r_{t+1}}{1+\rho}]^{1/\theta}$ ved brug af budgetrestriktion og nyttefunktion ved slide xx. 
+Antag nu blot at $U(C_{jt})= \frac{C_{jt}^{1-\theta}} {1-\theta}$
+
+
+- (b.) Forklar hvordan en stigning i renten i næste periode $r_{t+1}$ påvirker fordellingen mellem forbrug i denne periode og næste periode. 
+
+
+- (c.) Kommenter på forskellen i effekten af en stigning i $r_{t+1}$ ved $\theta = 1, 2$ og $5$.
+
