@@ -29,6 +29,15 @@ $$f(x)=g(x)^a  \rightarrow f'(x) = ag(x)^{a-1}g'(x)$$
 $$f(x)=e^x  \rightarrow f'(x) = e^x$$
 $$f(x)=ln(x)  \rightarrow f'(x) = \frac{1}{x}$$
 
+## Eksempel: 
+
+1.2.6 fra vores opagerve sektion.
+
+Find an expression for the impact of a marginal change in g on the fraction of output
+that is saved on the balanced growth path. Can one tell whether this expression is
+positive or negative? 
+
+Og så laver de 1.2.7 som opgave?
 
 ## Kædereglen - Sammensatte funktioner
 

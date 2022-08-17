@@ -9,10 +9,23 @@ output:
 
 # Opgaver til fase diagrammer?
 
+# Opgave 2.7 b og c fra bogen:
+
+Describe how each of the following affects the $\dot{c} =0$, and $\dot{k} = 0$ curves in figure 2.5 and thus how they affect the balanced growth path values of $c$ and $k$.
+
+## b
+ A downward shift in the production function
+
+## c 
+
+A change in the rate of depreciation from the value zero assumed in the text to some positive level. 
+
 
 
 
 # Opgave 1
+
+
 
 Find Taylor approximation af:
 
@@ -33,14 +46,27 @@ Find Taylor approximation af:
 
 Givet funktionen $f(x)=x^6 - x^3$ hvad er koefficienten for ledet $(x+2)^4$ i Taylor approximation af f(x) omkring $x=-2$
 
-# Opgave 3 ( Ved ik helt om jeg skal vise denne i slides, og inkludere den anden i opgaver?)
-
-
+# Opgave 3 
 
 Find en 1. order Taylor approximation omkring $k=k^*$ når du ved at udviklingen i kapital over tid følger følgende ligning: 
 
 
 $$\dot{k} = s*f(k) - (n+g+\delta)k$$
+
+# Opgave 4:
+
+Bogen opgave 1.13
+
+Go through steps analogous to those in equation (1.29)-(1.32) to find how quickly $y$ converges to $y^*$ in the vicinity of the balanced growth path 
+(hint:; since $y=f(k)$, we can write $k=g(y)$ where $g(.) = f^{-1}(.)$)
+
+
+# Opgave 5: 
+
+**Opgave 2.8 fra bogen:**
+
+Derive an expression analogous to eq 2.40 for the case of a positive depreciation
+
 
 ## Løsning opgave 3
 
