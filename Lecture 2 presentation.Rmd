@@ -18,7 +18,7 @@ output:
 
 
 
-### Lignigner
+### Ligninger
 
 $$\frac{\dot{c}}{c}= \frac{f'(k) - \rho -\theta g}{\theta}$$
 $$\dot{k} = f(k) - c -(n + g) k$$
@@ -42,7 +42,7 @@ $$ f'(k) - \rho -\theta g=0$$
 $$ \rho -\theta g=f'(k)$$
 
 ```{r, echo=FALSE}
-knitr::include_graphics(rep("c dot.png", 1), dpi = 250)
+knitr::include_graphics(rep("c dot.png", 1), dpi = 500)
 ```
 
 
@@ -52,14 +52,14 @@ $$\dot{k} = f(k) - c -(n + g) k$$
 $$f(k) - c -(n + g) k=0$$
 $$c = f(k) -(n + g)k$$
 ```{r, echo=FALSE}
-knitr::include_graphics(rep("k dot.png", 1), dpi = 250)
+knitr::include_graphics(rep("k dot.png", 1), dpi = 500)
 ```
 
 
 ## Combined
 
 ```{r, echo=FALSE}
-knitr::include_graphics(rep("k dot c dot.jpg", 1), dpi = 500)
+knitr::include_graphics(rep("k dot c dot.jpg", 1), dpi = 200)
 ```
 
 ## Combined

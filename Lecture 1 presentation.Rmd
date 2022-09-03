@@ -39,6 +39,11 @@ positive or negative?
 
 Og så laver de 1.2.7 som opgave?
 
+
+## Eksempel 
+
+Bevis inada conditions med cobb-douglas function
+
 ## Kædereglen - Sammensatte funktioner
 
 - Lad $z= f(x,y)$
