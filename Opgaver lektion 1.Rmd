@@ -9,52 +9,31 @@ output:
 
 # Opgave 1
 
-## a
-
-**Ved ikke om denne del måske skal præsenteres i slides? som eksempel på at bruge differntiering**
-
-1.2.6 fra vores opagerve sektion.
-
-Find an expression for the impact of a marginal change in g on the fraction of output
-that is saved on the balanced growth path. Can one tell whether this expression is
-positive or negative?
+I ttilfældet hvor produktionsfunktionen er Cobb-Douglas, $f(x) = k \alpha$, omskriv resultatet fra slide 11. i en form der inkludere $\rho, n, g, \theta$ og $\alpha$, (Hint: brug at $f'(k^*) = \rho + \theta g$)
 
 
-## b
-
-For the case where the production function is Cobb-Douglas, $f(x) = k \alpha$, rewrite your
-answer to part (f) in terms of $\rho, n, g, \theta$ and $\alpha$, (Hint:Use the fact that $f'(k^*) = \rho + \theta g$)
-
-# Opgave 2:
-
-Opgave 2.5 bogen
-
-Consider a household with utility given by eq 2.2 - 2.3. Assume that the real interest rate is constant, and let W denote the households initial wealth plusthe present value of lifetime labor income find the utility maximizing path of C, given r, W, and parameters of the utility function. 
-
-
-
-# Opgave 3:
+# Opgave 2
 
 Lad kapital per effektiv arbejder være bestemt af funktionen $k=\frac{K}{AL}$ hvor udviklingen i kapital over tid er givet ved $\dot{K} = [Y(t) - C(t)] - \delta K(t)$ Labor in time t $L(t)= L(0) e^{nt}$ and technology in time t: $A(t)= A(0) e^{gt}$
 
 find udviklingen i $k$ over tid $(\dot{k})$
 
-- Hint opstil vækstraten $\dot{A}/A$ og $\dot{L}/L$
+- Hint opstil vækst-raten $\dot{A}/A$ og $\dot{L}/L$
 
-# Opgave 4
+# Opgave 3
 
 Antag funktionen for constant relative risk aversion (CRRA): $f(L_t) = \frac{b(1-L_t)^{1-\gamma}}{1- \gamma}$
 
 Find $f'(L_t)$ med respekt til $L_t$
 
-# Opgave 5
+# Opgave 4
 
-- (a.) Find følgende Euler equation $\frac{C_{2,t+1}}{C_{1,t}} = [\frac{1+ r_{t+1}}{1+\rho}]^{1/\theta}$ ved brug af budgetrestriktion og nyttefunktion ved slide xx. 
+- (a.) Find følgende Euler equation $\frac{C_{2,t+1}}{C_{1,t}} = [\frac{1+ r_{t+1}}{1+\rho}]^{1/\theta}$ ved brug af budgetrestriktion og nyttefunktion ved slide 18. 
 Antag nu blot at $U(C_{jt})= \frac{C_{jt}^{1-\theta}} {1-\theta}$
 
 
 - (b.) Forklar hvordan en stigning i renten i næste periode $r_{t+1}$ påvirker fordellingen mellem forbrug i denne periode og næste periode. 
 
 
-- (c.) Kommenter på forskellen i effekten af en stigning i $r_{t+1}$ ved $\theta = 1, 2$ og $5$.
+- (c.) Kommenter på hvordan ændrigner i $\theta$ påvirker effekten af en stigning i $r_{t+1}$. 
 

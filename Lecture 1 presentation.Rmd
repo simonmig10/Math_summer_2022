@@ -13,6 +13,19 @@ output:
 
 # Intro til kursus: 
 
+### mig 
+
+- Jeg tog kurset sidste år. 
+
+- Mail: sfth18@student.aau.dk
+
+- kontor: fibigerstræde 10, lokale 24. 
+
+### kurset
+
+- 2 lektioner af 4 timer hvor største delen bliver brugt på øvelser. 
+
+- Gennemgang af løsning de sidse 30 minutter. (også på moodle)
 
 
 # Differentierings regler (funktioner af en variable)
@@ -29,22 +42,74 @@ $$f(x)=g(x)^a  \rightarrow f'(x) = ag(x)^{a-1}g'(x)$$
 $$f(x)=e^x  \rightarrow f'(x) = e^x$$
 $$f(x)=ln(x)  \rightarrow f'(x) = \frac{1}{x}$$
 
-## Eksempel: 
+## Eksempel på Eksamens opgave sidste år: 
 
-1.2.6 fra vores opagerve sektion.
+
 
 Find an expression for the impact of a marginal change in g on the fraction of output
 that is saved on the balanced growth path. Can one tell whether this expression is
 positive or negative? 
 
-Og så laver de 1.2.7 som opgave?
+- Andel af output opsparet i steady state: 
+
+$$s= \frac{f(k^*)-c^*}{f(k^*)}$$
+- Vi ved også at $\dot{k}=0$ i steady state, derfor kan vi skrive  $\dot{k}= f(k) - c - (n+g)k$ som følgene: 
+
+$$f(k^*) - c^* = (n+g)k^*$$
+
+## Eksempel på Eksamens opgave sidste år: 
 
 
-## Eksempel 
+- Derfor kan vi nu omskrive andelen af savings til 
 
-Bevis inada conditions med cobb-douglas function
+$$s= \frac{(n+g)k^*}{f(k^*)}$$
 
-## Kædereglen - Sammensatte funktioner
+- Vi skal nu differentiere dette udtryk mhs. til $g$. (hint: brug regler for differeniering af en brøk. Og husk $g$ har også en effekt på $k^*$ derfor skal kædereglen også bruges)
+
+- 15 minuter (svaret er på næste side)
+
+
+## Eksempel på Eksamens opgave sidste år: 
+
+$$\frac {\delta s} {\delta g} = \frac {f(k^*)[(n+g)(\frac{\delta k^*}{\delta g})+k^*] - (n+g)k^* f'(k^*)(\frac{\delta k^*}{\delta g})}{[f(k^*)]^2}$$
+
+- Vi kan nu gange $f(k^*)$ ind i parentesen og sætter $(n+g)(\frac{\delta k^*} {\delta g})$ udenfor
+
+
+$$\frac {\delta s} {\delta g} = \frac {f(k^*)(n+g)(\frac{\delta k^*}{\delta g})+ f(k^*) k^* - (n+g)k^* f'(k^*)(\frac{\delta k^*}{\delta g})}{[f(k^*)]^2}$$
+
+
+$$\frac {\delta s} {\delta g} = \frac {(n+g)[f(k^*) -k^* f'(k^*)](\frac{\delta k^*} {\delta g}) + f(k^*)k^*} {[f(k^*)]^2}$$
+
+- Da vi er i steady state ved vi at $f'(k^*)= \rho + \theta g$ vi kan differentiere med $g$ på begge sider af lighedstegnet. (5 minutter, igen svaret er på næste slide)
+
+
+## Eksempel på Eksamens opgave sidste år: 
+
+
+$$f''(k^*)(\frac{\delta k^*} {\delta g}) = \theta$$
+
+- Hvis vi isolere $(\frac{\delta k^*} {\delta g})$: 
+
+$$(\frac{\delta k^*} {\delta g}) = \frac{\theta}{f''(k^*)}$$
+
+- Vi kan substituere dette ind i udtrykket: 
+
+$$\frac {\delta s} {\delta g} = \frac {(n+g)[f(k^*) -k^* f'(k^*)](\frac{\theta} {f''(k^*)}) + f(k^*)k^*} {[f(k^*)]^2}$$
+
+## Eksempel på Eksamens opgave sidste år: 
+
+
+- Vi kan nu gange med $f''(k^*)$ over og under brøken. 
+
+$$\frac{\delta s}{\delta g} = \frac{(n+g)[f(k^*)-k^*f'(k^*)]\theta + f(k^*)k^*f''(k^*)}{[f(k^*)]^2 f''(k^*)}$$
+
+- Hvad kan vi sige om effekten af en marginal ændring i g på savings af output?
+
+  - Vi ved at der er aftagende marginal produkt på kapital. 
+
+
+# Kædereglen - Sammensatte funktioner
 
 - Lad $z= f(x,y)$
 - Lad $y$ og $x$ være funktioner af t: $y= g(t)$ og $x= h(t)$
