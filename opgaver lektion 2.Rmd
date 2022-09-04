@@ -68,6 +68,22 @@ Go through steps analogous to those in equation (1.29)-(1.32) to find how quickl
 Derive an expression analogous to eq 2.40 for the case of a positive depreciation
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Løsning opgave 3
 
 $$\dot{k} = s*f(k) - (n+g+\delta)k$$
