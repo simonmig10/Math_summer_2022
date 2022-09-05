@@ -25,7 +25,7 @@ Find $f'(L_t)$ med respekt til $L_t$
 # Opgave 3
 
 - (a.) Find følgende Euler equation $\frac{C_{2,t+1}}{C_{1,t}} = [\frac{1+ r_{t+1}}{1+\rho}]^{1/\theta}$ ved brug af budgetrestriktion og nyttefunktion ved slide 18. 
-Antag nu blot at $U(C_{jt})= \frac{C_{jt}^{1-\theta}} {1-\theta}$
+Antag nu blot at $U(C_{jt})= \frac{C_{jt}^{1-\theta} - 1} {1-\theta}$
 
 
 - (b.) Forklar hvordan en stigning i renten i næste periode $r_{t+1}$ påvirker fordellingen mellem forbrug i denne periode og næste periode. 
